@@ -18,7 +18,7 @@ Imports System.Reflection
  Assembly: System.Reflection.AssemblyCopyrightAttribute("Kaan Divrikli (C) 2025"),
  Assembly: System.Reflection.AssemblyDescriptionAttribute("A simple Voice Engine"),
  Assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.2"),
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b8c3bcc1d92d3bae56355be5e200504c3f5224"),
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd73b3f8cc1e7f68af3b5b60d900286ee17c837e"),
  Assembly: System.Reflection.AssemblyProductAttribute("neXt Voice Engine"),
  Assembly: System.Reflection.AssemblyTitleAttribute("neXt Voice Engine"),
  Assembly: System.Reflection.AssemblyVersionAttribute("0.0.2"),

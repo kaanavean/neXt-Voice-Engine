@@ -110,20 +110,40 @@ Public Class XVE
         Dim audioParts As New List(Of Short())
         Dim header As Byte() = Nothing
 
-        ' Load files and convert them into short arrays
-        For Each p In phonemes
-            Dim filePath As String = Path.Combine(_vocalPath, p & ".wav")
-            If File.Exists(filePath) Then
-                Dim fileBytes = File.ReadAllBytes(filePath)
-                If fileBytes.Length > 44 Then
-                    If header Is Nothing Then header = fileBytes.Take(44).ToArray()
+        ' The path to the start tone. Connection to the dictionary is being developed
+        Dim startSoundPath As String = "C:\XDev\neXt Voice Synthesizer\end_recognition.wav"
 
-                    ' Convert bytes to Shorts (16-Bit PCM)
-                    Dim rawData = fileBytes.Skip(44).ToArray()
-                    Dim shorts(rawData.Length / 2 - 1) As Short
-                    Buffer.BlockCopy(rawData, 0, shorts, 0, rawData.Length)
-                    audioParts.Add(shorts)
-                End If
+        ' Load the start sound as the first element
+        Dim allFiles As New List(Of String)()
+
+        ' The existence of the start sound is checked and included at the beginning of the stream
+        If File.Exists(startSoundPath) Then
+            allFiles.Add(startSoundPath)
+        End If
+
+        ' Adding the phonemes
+        For Each p In phonemes
+            allFiles.Add(Path.Combine(_vocalPath, p & ".wav"))
+        Next
+
+        ' Convert each file into short arrays
+        For Each filePath In allFiles
+            If File.Exists(filePath) Then
+                Try
+                    Dim fileBytes = File.ReadAllBytes(filePath)
+                    If fileBytes.Length > 44 Then
+                        ' Extracting the header from the start sound file
+                        If header Is Nothing Then header = fileBytes.Take(44).ToArray()
+
+                        ' Extract audio-data
+                        Dim rawData = fileBytes.Skip(44).ToArray()
+                        Dim shorts(rawData.Length / 2 - 1) As Short
+                        Buffer.BlockCopy(rawData, 0, shorts, 0, rawData.Length)
+                        audioParts.Add(shorts)
+                    End If
+                Catch ex As Exception
+                    Debug.WriteLine("Fehler beim Laden von: " & filePath)
+                End Try
             End If
         Next
 
@@ -136,42 +156,37 @@ Public Class XVE
             Dim currentPart = audioParts(i)
 
             If i = 0 Then
-                ' Add the first sample completely
+                ' Add the first sample (the start sound) completely
                 resultList.AddRange(currentPart)
             Else
-
-                'Calculating the crossfade
-                'We take the last 'fadeSamples' from the previous result
-                'and mix them with the beginning of the new sample
-
+                ' Crossfade between the end of the previous stream and the new part
                 Dim overlapStart = resultList.Count - fadeSamples
                 If overlapStart < 0 Then overlapStart = 0
 
+                ' Crossfade math
                 For s As Integer = 0 To fadeSamples - 1
                     If s < currentPart.Length And (overlapStart + s) < resultList.Count Then
-                        ' Calculate volume (0.0 to 1.0)
                         Dim fadeOutFactor As Double = 1.0 - (s / fadeSamples)
                         Dim fadeInFactor As Double = s / fadeSamples
 
-                        ' Mix
                         Dim mixedSample = (resultList(overlapStart + s) * fadeOutFactor) + (currentPart(s) * fadeInFactor)
                         resultList(overlapStart + s) = CShort(mixedSample)
                     End If
                 Next
 
-                ' Append the rest of the new sample (after the fade section)
+                ' Attach the rest
                 If currentPart.Length > fadeSamples Then
                     resultList.AddRange(currentPart.Skip(fadeSamples))
                 End If
             End If
         Next
 
-        ' Return to byte array and update header
+        ' Final Byte Array Creation
         Dim finalBytes(resultList.Count * 2 + 43) As Byte
         Buffer.BlockCopy(header, 0, finalBytes, 0, 44)
         Buffer.BlockCopy(resultList.ToArray(), 0, finalBytes, 44, resultList.Count * 2)
 
-        ' Correct header lengths
+        ' WAV Header Correction
         Using ms As New MemoryStream(finalBytes)
             Using writer As New BinaryWriter(ms)
                 ms.Position = 4
