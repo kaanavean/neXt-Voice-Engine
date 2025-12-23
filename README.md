@@ -11,7 +11,7 @@ A concatenative speech engine based on phoneme stitching with crossfading.
 
 ## Installation
 
-1. Include the `SiriVoiceEngine.dll` as a reference in your project.
+1. Include the `neXt Voice Engine.dll` as a reference in your project.
 2. Create a folder for your `.wav` files.
 3. The files must be named exactly like the sound (e.g., `sh.wav`, `a.wav`, `ba.wav`).
 
