@@ -6,7 +6,7 @@ Imports System.Media
 ''' <summary>
 ''' A class for concatenating audio data to achieve speech output.
 ''' </summary>
-Public Class neXtVoiceEngine
+Public Class XVE
     Private _vocalPath As String
     Private _rules As New List(Of String)
 

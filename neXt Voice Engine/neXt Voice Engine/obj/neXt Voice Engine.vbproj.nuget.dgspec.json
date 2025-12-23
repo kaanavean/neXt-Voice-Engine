@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\XDev\\Voice Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj": {}
+    "C:\\Users\\deniz\\Documents\\GitHub\\neXt-Voice-Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj": {}
   },
   "projects": {
-    "C:\\XDev\\Voice Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj": {
+    "C:\\Users\\deniz\\Documents\\GitHub\\neXt-Voice-Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\XDev\\Voice Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj",
+        "projectUniqueName": "C:\\Users\\deniz\\Documents\\GitHub\\neXt-Voice-Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj",
         "projectName": "neXt Voice Engine",
-        "projectPath": "C:\\XDev\\Voice Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj",
+        "projectPath": "C:\\Users\\deniz\\Documents\\GitHub\\neXt-Voice-Engine\\neXt Voice Engine\\neXt Voice Engine\\neXt Voice Engine.vbproj",
         "packagesPath": "C:\\Users\\deniz\\.nuget\\packages\\",
-        "outputPath": "C:\\XDev\\Voice Engine\\neXt Voice Engine\\neXt Voice Engine\\obj\\",
+        "outputPath": "C:\\Users\\deniz\\Documents\\GitHub\\neXt-Voice-Engine\\neXt Voice Engine\\neXt Voice Engine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\deniz\\AppData\\Roaming\\NuGet\\NuGet.Config",

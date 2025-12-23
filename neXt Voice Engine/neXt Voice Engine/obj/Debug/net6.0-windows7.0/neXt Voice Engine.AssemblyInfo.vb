@@ -13,14 +13,16 @@ Option Explicit On
 
 Imports System
 Imports System.Reflection
-<Assembly: System.Reflection.AssemblyCompanyAttribute("neXt Voice Engine"),  _
- Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
- Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0"),  _
- Assembly: System.Reflection.AssemblyProductAttribute("neXt Voice Engine"),  _
- Assembly: System.Reflection.AssemblyTitleAttribute("neXt Voice Engine"),  _
- Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
- Assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0"),  _
- Assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")> 
+<Assembly: System.Reflection.AssemblyCompanyAttribute("neXt Voice Engine"),
+ Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),
+ Assembly: System.Reflection.AssemblyCopyrightAttribute("Kaan Divrikli (C) 2025"),
+ Assembly: System.Reflection.AssemblyDescriptionAttribute("A simple Voice Engine"),
+ Assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.2"),
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b8c3bcc1d92d3bae56355be5e200504c3f5224"),
+ Assembly: System.Reflection.AssemblyProductAttribute("neXt Voice Engine"),
+ Assembly: System.Reflection.AssemblyTitleAttribute("neXt Voice Engine"),
+ Assembly: System.Reflection.AssemblyVersionAttribute("0.0.2"),
+ Assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0"),
+ Assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")>
 
 'Von der MSBuild WriteCodeFragment-Klasse generiert.

@@ -4,6 +4,28 @@
     <RootNamespace>neXt_Voice_Engine</RootNamespace>
     <TargetFramework>net6.0-windows7.0</TargetFramework>
 	 <UseWindowsForms>true</UseWindowsForms>
+	 <Title>neXt Voice Engine</Title>
+	 <Version>$(VersionPrefix)</Version>
+	 <Description>A simple Voice Engine</Description>
+	 <Copyright>Kaan Divrikli (C) 2025</Copyright>
+	 <AssemblyVersion>0.0.2a</AssemblyVersion>
+	 <FileVersion>0.0.2</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Settings.Designer.vb">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
 
 </Project>
