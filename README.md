@@ -18,5 +18,5 @@ A concatenative speech engine based on phoneme stitching with crossfading.
 
 ## Example (VB.NET)
 ```vbnet
-Dim engine = New neXtVoiceEngine("C:\Path\To\Sounds\", rules)
+Dim engine = New XVE("C:\Path\To\Sounds\", rules)
 engine.Speak("Hello World")
