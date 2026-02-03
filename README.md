@@ -15,6 +15,11 @@ A concatenative speech engine based on phoneme stitching with crossfading.
 2. Create a folder for your `.wav` files.
 3. The files must be named exactly like the sound (e.g., `sh.wav`, `a.wav`, `ba.wav`).
 
+## Current Status
+
+Currently, all possible phoneme combinations for the English language are being collected in order to create a sound bank.
+
+A stress system is currently being designed that will automatically stress certain words, such as those following a comma. A marking system is also planned that will then assign these words a synthetic stress (in other words, a random stress pattern to make words stand out, etc.).
 
 ## Example (VB.NET)
 ```vbnet
