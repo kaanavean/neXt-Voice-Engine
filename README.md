@@ -1,6 +1,6 @@
 # neXt Voice Engine (VB.NET)
 
-A concatenative speech engine based on phoneme stitching with crossfading.
+A concatenative speech engine based on phoneme stitching with crossfading (or simply put, a synthesizer).
 
 ## Features
 
