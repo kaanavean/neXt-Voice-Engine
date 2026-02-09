@@ -23,5 +23,5 @@ A stress system is currently being designed that will automatically stress certa
 
 ## Example (VB.NET)
 ```vbnet
-Dim engine = New XVE("C:\Path\To\Sounds\", rules)
+Dim engine = New XVE("C:\Path\To\Sounds\")
 engine.Speak("Hello World")
