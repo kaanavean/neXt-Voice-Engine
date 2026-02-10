@@ -21,6 +21,10 @@ Currently, all possible phoneme combinations for the English language are being 
 
 A stress system is currently being designed that will automatically stress certain words, such as those following a comma. A marking system is also planned that will then assign these words a synthetic stress (in other words, a random stress pattern to make words stand out, etc.).
 
+When adding the library, you'll notice that in addition to XVE, there's also the option XVEv2. XVEv2 is currently only a test and is by no means ready for use. While it should theoretically work... that's only in theory.
+
+Once I have a sample ready (meaning I have a synthesizer model), I will further adapt the system accordingly and fix any potential bugs. These improvements will be included in an update. The original XVE will then be retained as a legacy version.
+
 ## Example (VB.NET)
 ```vbnet
 Dim engine = New XVE("C:\Path\To\Sounds\")
